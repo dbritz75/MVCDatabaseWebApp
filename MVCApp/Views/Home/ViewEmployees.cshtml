@@ -1,0 +1,43 @@
+﻿@model IEnumerable<MVCApp.Models.EmployeeModel>
+
+@{
+    ViewBag.Title = "ViewEmployees";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewEmployees</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Signup")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.employeeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailAddress)
+        </th>
+        <th>
+            Confirm Email
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.employeeID)</td>
+        <td>@Html.DisplayFor(modelItem => item.firstName)</td>
+        <td>@Html.DisplayFor(modelItem => item.lastName)</td>
+        <td>@Html.DisplayFor(modelItem => item.emailAddress)</td>
+        <td>@Html.DisplayFor(modelItem => item.confirmEmail)</td>
+    </tr>
+}
+
+</table>
